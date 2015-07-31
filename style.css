@@ -1,0 +1,40 @@
+.myTableContainer .myTable {
+  width:100%;
+}
+
+.myTableContainer .myTable thead th {
+  background-color: red;  
+}
+
+.myTableContainer .stickyTable {
+  position:absolute;
+}
+
+.myTableContainer .stickyTable.remainInSight {
+  position: fixed;
+  top: 0;
+}
+
+.myTableContainer .stickyTable thead th {
+  background-color:green;
+}
+
+.firstColumn {
+  width: 55%;
+}
+
+.secondColumn {
+  width: 15%;
+}
+
+.thirdColumn {
+  width: 15%;
+}
+
+.fourthColumn {
+  width: 15%;
+}
+
+.myTable tbody td {
+  background-color: gray;
+}

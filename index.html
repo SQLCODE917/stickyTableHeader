@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="script.js"></script>
+    <script src="stickyTableController.js"></script>
+    <script src="stickyTableContainerDirective.js"></script>
+    <script src="stickyTableHeaderDirective.js"></script>
+    <script src="stickyTableHeaderRowDirective.js"></script>
+    <script src="tableDataService.js"></script>
+    <script src="rateTableController.js"></script>
+  </head>
+
+  <body ng-app="tableApp">
+    <section sticky-table-container class="myTableContainer">
+      <table class="myTable">
+        <colgroup>
+          <col class="firstColumn">
+          <col class="secondColumn">
+          <col class="thirdColumn">
+          <col class="forthColumn">
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="firstColumn name">Name</th>
+            <th class="secondColumn age">Age</th>
+            <th class="thirdColumn rank">Rank</th>
+            <th class="forthColumn rate">Rate</th>
+          </tr>
+        </thead>
+        <tbody ng-controller="rateTableController as tbodyVM">
+          <tr ng-repeat="subject in tbodyVM.subjects | orderBy:['-rank', 'rate']">
+            <td class="firstColumn">{{::subject.name}}</td>
+            <td class="secondColumn">{{::subject.age}}</td>
+            <td class="thirdColumn">{{::subject.rank}}</td>
+            <td class="fourthColumn">{{::subject.rate}}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </section>
+  </body>
+
+</html>
